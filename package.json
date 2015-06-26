@@ -1,0 +1,18 @@
+{
+  "name": "formsy-abide",
+  "version": "1.0.0",
+  "description": "Create Foundation 5 Abide compatible forms with React and Formsy",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brett Grace",
+  "license": "MIT",
+  "dependencies": {
+    "formsy-react": "^0.14.1",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "babel-loader": "^5.2.2"
+  }
+}
