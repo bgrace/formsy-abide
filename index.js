@@ -1,5 +1,4 @@
-var foo = "Foo from formsy-abide says hi";
+import FormMixin from './widgets/FormMixin.js';
 
-export default foo;
+module.exports = FormMixin;
 
-console.log("Within index.js: ", foo);
