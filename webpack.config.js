@@ -1,21 +1,23 @@
 /**
  * Created by bgrace on 6/26/15.
  */
-var webpack = require('webpack');
-
-var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
 module.exports = {
     entry: {
-        "formsy-react": './index'
+        "formsy-abide": './index'
+    },
+    externals: {
+        react: 'react'
     },
     output: {
         path: "build",
-        filename: "[name].js"
+        filename: "[name].js",
+        libraryTarget: 'umd',
+        library: 'formsy-abide'
     },
     module: {
         loaders: [
-            { test: /\.jsx?$/, loader: "babel-loader"},
+            { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader"}
         ]
     },
     resolve: {
@@ -23,5 +25,4 @@ module.exports = {
         extensions: ['', '.js', '.jsx', '.json']
     }
 
-//    plugins: [commonsPlugin]
 };

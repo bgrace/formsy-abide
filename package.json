@@ -12,6 +12,10 @@
     "formsy-react": "^0.14.1",
     "react": "^0.13.3"
   },
+  "peerDependencies": {
+    "formsy-react": "^0.14.1",
+    "react": "^0.13.3"
+  },
   "devDependencies": {
     "babel-loader": "^5.2.2"
   }

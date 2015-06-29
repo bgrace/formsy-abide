@@ -1,7 +1,7 @@
 import React from 'react';
 import Formsy from 'formsy-react';
 import FieldWarning from './FieldWarning';
-import Widget from './Widget'
+import Widget from './Widget';
 
 var TextField = React.createClass({
 
