@@ -3,17 +3,12 @@ import Formsy from 'formsy-react';
 import Widget from './Widget'
 
 var RadioButton = React.createClass({
-    onChange: function(event) {
-        this.props.setValue(this.props.label);
-    },
+
     render: function () {
         return (
-            <span>
-                <input type="radio"
-                    name={this.props.name}
-                    onChange={this.onChange}
-                />
-                <label forHtml={this.props.id}>{this.props.label}</label>
+            <span className={this.props.wrapperClass}>
+                <input type="radio" name={this.props.name} value={this.props.value} onChange={this.props.onChange} id={this.props.id} defaultChecked={this.props.checked}/>
+                <label htmlFor={this.props.id}>{this.props.label}</label>
             </span>
         );
     }
@@ -23,11 +18,19 @@ var RadioGroup = React.createClass({
 
     mixins: [Widget, Formsy.Mixin],
 
+    onChange: function(event) {
+        this.setValue(event.target.value);
+    },
+
     render: function () {
         var name = this.props.name;
+
         var buttons = this.props.options.map(function (option) {
+            var value = option.value;
+            var checked = value === this.getValue();
+
             return (
-                <RadioButton key={option.id} setValue={this.setValue} {...option} name={ name }/>
+                <RadioButton key={value} checked={checked} name={name} value={value} wrapperClass={this.props.wrapperClass} onChange={this.onChange} {...option} />
             );
         }, this);
 
